@@ -1,0 +1,6 @@
+receive_data.c:13:6:DS18B20_Start	8	static
+receive_data.c:24:7:Temp_Read	16	static
+receive_data.c:42:6:DS18B20_Write	24	static
+receive_data.c:59:9:DS18B20_Read	16	static
+receive_data.c:78:9:Light_Read	16	static
+receive_data.c:87:10:Gas_Read	16	static

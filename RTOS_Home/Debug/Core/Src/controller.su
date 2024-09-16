@@ -1,0 +1,2 @@
+controller.c:10:6:LED_Control	16	static
+controller.c:18:6:Buzz_Control	24	static
