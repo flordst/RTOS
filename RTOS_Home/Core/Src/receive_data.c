@@ -24,7 +24,8 @@ void DS18B20_Start(void) {
 float Temp_Read(void) {
     uint16_t rawTemperature;
     float temperature;
-
+    DS18B20_Start();
+    HAL_Delay(500);
 
     DS18B20_Write(0xCC);
     DS18B20_Write(0xBE);
