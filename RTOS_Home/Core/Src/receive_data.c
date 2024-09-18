@@ -8,7 +8,7 @@
 #include "receive_data.h"
 #include "main.h"
 //Read_temparature
-ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc1;
 
 void DS18B20_Start(void) {
 
