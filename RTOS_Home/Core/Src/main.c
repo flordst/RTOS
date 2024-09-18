@@ -62,7 +62,7 @@ void vTaskLEDControl(void *pvParameters);
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
-I2C_HandleTypeDef hi2c1;
+//I2C_HandleTypeDef hi2c1;
 
 /* Definitions for defaultTask */
 
@@ -108,6 +108,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
+ 	OLED_SSD1306_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -122,7 +123,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C1_Init();
+ // MX_I2C1_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   /* USER CODE END 2 */
