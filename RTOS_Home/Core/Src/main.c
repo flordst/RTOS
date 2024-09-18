@@ -108,7 +108,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
- 	OLED_SSD1306_Init();
+	OLED_SSD1306_Init();
 
   /* USER CODE BEGIN Init */
 
