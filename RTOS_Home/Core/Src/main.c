@@ -60,7 +60,7 @@ void vTaskLEDControl(void *pvParameters);
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-extern ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc1;
 
 //I2C_HandleTypeDef hi2c1;
 
