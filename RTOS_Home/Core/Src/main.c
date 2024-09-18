@@ -60,7 +60,7 @@ void vTaskLEDControl(void *pvParameters);
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-// ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc1;
 
 //I2C_HandleTypeDef hi2c1;
 
@@ -122,9 +122,9 @@ OLED_SSD1306_Init();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  // MX_GPIO_Init();
+  MX_GPIO_Init();
  // MX_I2C1_Init();
-  //MX_ADC1_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   /* USER CODE END 2 */
 
@@ -273,73 +273,73 @@ static void MX_ADC1_Init(void)
   * @param None
   * @retval None
   */
-static void MX_I2C1_Init(void)
-{
+// static void MX_I2C1_Init(void)
+// {
 
-  /* USER CODE BEGIN I2C1_Init 0 */
+//   /* USER CODE BEGIN I2C1_Init 0 */
 
-  /* USER CODE END I2C1_Init 0 */
+//   /* USER CODE END I2C1_Init 0 */
 
-  /* USER CODE BEGIN I2C1_Init 1 */
+//   /* USER CODE BEGIN I2C1_Init 1 */
 
-  /* USER CODE END I2C1_Init 1 */
-  hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 100000;
-  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
-  hi2c1.Init.OwnAddress1 = 0;
-  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-  hi2c1.Init.OwnAddress2 = 0;
-  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
-  {
-    Error_Handler();
-  }
+//   /* USER CODE END I2C1_Init 1 */
+//   hi2c1.Instance = I2C1;
+//   hi2c1.Init.ClockSpeed = 100000;
+//   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+//   hi2c1.Init.OwnAddress1 = 0;
+//   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+//   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+//   hi2c1.Init.OwnAddress2 = 0;
+//   hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+//   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+//   if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+//   {
+//     Error_Handler();
+//   }
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
 
-}
+// }
 
 /**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
   */
-// static void MX_GPIO_Init(void)
-// {
-//   GPIO_InitTypeDef GPIO_InitStruct = {0};
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-//   /* GPIO Ports Clock Enable */
-//   __HAL_RCC_GPIOH_CLK_ENABLE();
-//   __HAL_RCC_GPIOA_CLK_ENABLE();
-//   __HAL_RCC_GPIOB_CLK_ENABLE();
-//   __HAL_RCC_GPIOC_CLK_ENABLE();
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
 
-//   /*Configure GPIO pin Output Level */
-//   HAL_GPIO_WritePin(GPIOA, LED_Pin|BUZZ_Pin, GPIO_PIN_RESET);
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, LED_Pin|BUZZ_Pin, GPIO_PIN_RESET);
 
-//   /*Configure GPIO pins : LED_Pin BUZZ_Pin */
-//   GPIO_InitStruct.Pin = LED_Pin|BUZZ_Pin;
-//   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-//   GPIO_InitStruct.Pull = GPIO_NOPULL;
-//   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-//   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  /*Configure GPIO pins : LED_Pin BUZZ_Pin */
+  GPIO_InitStruct.Pin = LED_Pin|BUZZ_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-//   /*Configure GPIO pin : Temp_Pin */
-//   GPIO_InitStruct.Pin = Temp_Pin;
-//   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-//   GPIO_InitStruct.Pull = GPIO_NOPULL;
-//   HAL_GPIO_Init(Temp_GPIO_Port, &GPIO_InitStruct);
+  /*Configure GPIO pin : Temp_Pin */
+  GPIO_InitStruct.Pin = Temp_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Temp_GPIO_Port, &GPIO_InitStruct);
 
-//   /*Configure GPIO pin : Light_Pin */
-//   GPIO_InitStruct.Pin = Light_Pin;
-//   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-//   GPIO_InitStruct.Pull = GPIO_NOPULL;
-//   HAL_GPIO_Init(Light_GPIO_Port, &GPIO_InitStruct);
+  /*Configure GPIO pin : Light_Pin */
+  GPIO_InitStruct.Pin = Light_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Light_GPIO_Port, &GPIO_InitStruct);
 
-// }
+}
 
 /* USER CODE BEGIN 4 */
 
